@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel
 
 class AutoPartBase(BaseModel):
@@ -12,3 +13,8 @@ class AutoPart(AutoPartBase):
 
     class Config:
         orm_mode = True
+
+class AutoPartUpdate(BaseModel):
+    name : Optional[str] = None
+    description: Optional[str] = None
+    price: Optional[float] = None
